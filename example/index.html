@@ -2,11 +2,29 @@
 <html>
 	<head>
 		<title>Squarebg example</title>
+        <style>
+            html, body {
+                width   : 100%;
+                height  : 100%;
+                padding : 0;
+                margin  : 0;
+            }
+        </style>
 		<script src="../lib/squarebg.js"></script>
 	</head>
-	<body>
+	<body id="body">
 		<script>
-			squarebg({});
+			var bg = squarebg({
+                width        : 100,
+                height       : 100,
+                xSquares     : 10,
+                ySquares     : 10,
+                fillColors   : ["#009966", "#0c8d62", "#16835f"],
+                strokeColors : ["#006644"],
+                strokeWidth  : 1
+            });
+
+            document.getElementById("body").style.backgroundImage = "url("+bg+")";
 		</script>
 	</body>
 </html>
